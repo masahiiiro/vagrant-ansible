@@ -1,0 +1,22 @@
+- hosts: servers
+  sudo: true
+  user: vagrant
+  tasks:
+    - name: install iptables
+      yum: name=iptables state=installed
+
+    - name: chmod 777 iptables
+      command: chmod 0777 /etc/sysconfig/iptables
+
+    - name: copy template iptables
+      command: cp /vagrant/templates/iptables /etc/sysconfig/iptables
+
+    - name: chmod 600 iptables
+      command: chmod 0600 /etc/sysconfig/iptables
+
+    - name: restarting iptables
+      service: name=iptables state=restarted enabled=yes
+
+    - name: restarting network
+      service: name=network state=restarted enabled=yes
+
