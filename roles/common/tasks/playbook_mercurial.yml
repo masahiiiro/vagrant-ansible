@@ -1,0 +1,16 @@
+- hosts: servers
+  sudo: true
+  user: vagrant
+  tasks:
+    - name: install gcc
+      yum: name=gcc state=latest
+
+    - name: install python
+      yum: name=python-devel state=latest
+
+    - name: install python tools
+      yum: name=python-setuptools state=latest
+
+    - name: install mercurial
+      command: easy_install pip mercurial
+

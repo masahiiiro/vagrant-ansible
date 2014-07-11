@@ -9,7 +9,7 @@
       command: chmod 0777 /etc/sysconfig/iptables
 
     - name: copy template iptables
-      command: cp /vagrant/templates/iptables /etc/sysconfig/iptables
+      command: cp /vagrant/ansible/roles/common/files/iptables /etc/sysconfig/iptables
 
     - name: chmod 600 iptables
       command: chmod 0600 /etc/sysconfig/iptables
