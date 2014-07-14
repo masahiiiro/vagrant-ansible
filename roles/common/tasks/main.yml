@@ -1,3 +1,5 @@
 - include: playbook_iptables.yml
 - include: playbook_jenkins.yml
+- include: playbook_mercurial.yml
+- include: playbook_nginx.yml
 

@@ -1,0 +1,40 @@
+- hosts: servers
+  sudo: true
+  user: vagrant
+  tasks:
+      #    - name: update package
+      #yum: name=* state=latest
+
+    - name: set php repo
+      command: rpm -ivh http://ftp-srv2.kddilabs.jp/Linux/distributions/fedora/epel/6/x86_64/epel-release-6-8.noarch.rpm
+
+    - name : set php repo 2
+      command: rpm -ivh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
+
+    - name: set php repo 3
+      command: rpm -ivh http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.2-2.el6.rf.x86_64.rpm
+
+    - name: install php54
+      yum: name={{item}} state=present enablerepo=epel,remi,rpmforge
+      with_items:
+        - php
+        - php-cli
+        - php-pdo    
+        - php-mysql
+        - php-common   
+        - php-cgi
+        - php-fpm 
+        - php-devel
+        - php-gd      
+        - php-mbstring          
+        - php-odbc 
+        - php-pear   
+        - php-snmp      
+        - php-bcmath 
+        - php-xmlrpc      
+        - php-tidy     
+        - php-xml          
+        - php-mssql      
+        - php-soap     
+        - php-pgsql      
+        - php-mcrypt      
