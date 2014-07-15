@@ -9,7 +9,7 @@
       yum: name=zlib-devel state=latest
 
     - name: install memcache
-      yum: name=memcache state=latest
+      yum: name=memcached state=latest
 
     - name: install memcache  
       command: pecl install memcache

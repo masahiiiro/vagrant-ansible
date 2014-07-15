@@ -1,0 +1,16 @@
+- hosts: servers
+  sudo: true
+  user: vagrant
+  tasks:
+    - name: install ImageMagick
+      yum: name=ImageMagick state=latest
+ 
+    - name: install ImageMagick
+      yum: name=ImageMagick-devel state=latest
+
+    - name: install ImageMagic php extension
+      command: pecl install imagick-beta
+
+    - name: echo "extension=imagick.so" > /etc/php.d/imagick.ini
+      command: echo "extension=imagick.so" > /etc/php.d/imagick.ini
+

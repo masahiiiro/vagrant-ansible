@@ -9,14 +9,9 @@
       command: chmod 0777 /etc/sysconfig/iptables
 
     - name: copy template iptables
-      command: cp /vagrant/ansible/roles/common/files/iptables /etc/sysconfig/iptables
+      command: cp /vagrant/roles/common/files/iptables /etc/sysconfig/iptables
 
     - name: chmod 600 iptables
       command: chmod 0600 /etc/sysconfig/iptables
 
-    - name: restarting iptables
-      service: name=iptables state=restarted enabled=yes
-
-    - name: restarting network
-      service: name=network state=restarted enabled=yes
 

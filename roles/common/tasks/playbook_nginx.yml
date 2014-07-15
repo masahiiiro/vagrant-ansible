@@ -9,5 +9,5 @@
      command: rpm -ivh http://nginx.org/packages/centos/5/noarch/RPMS/nginx-release-centos-5-0.el5.ngx.noarch.rpm
 
    - name: install nginx
-     yum: name=nginx state=present enablerepo=epel,remi,rpmforge
+     yum: name=nginx state=present 
 

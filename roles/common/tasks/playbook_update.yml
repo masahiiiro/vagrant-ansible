@@ -1,0 +1,7 @@
+- hosts: servers
+  sudo: true
+  user: vagrant
+  tasks:
+     - name: update package
+       yum: name=* state=latest
+
