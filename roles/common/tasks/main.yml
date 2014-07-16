@@ -1,9 +1,10 @@
 - include: playbook_update.yml
 - include: playbook_iptables.yml
-- include: playbook_jenkins.yml
+#- include: playbook_jenkins.yml
 - include: playbook_mercurial.yml
 - include: playbook_nginx.yml
 - include: playbook_php.yml
 - include: playbook_memcache.yml
 - include: playbook_imagemagick.yml
+- include: playbook_mysql.yml
 

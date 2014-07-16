@@ -2,30 +2,20 @@
   sudo: true
   user: vagrant
   tasks:
-    - name: cd ~
-      command: cd ~
-
-    - name : mkdir rpms
-      command: mkdir rpms
-
-    - name: cd rpms
-      command: cd rpms
-
     - name: wget mysql 1
       command: wget http://dev.mysql.com/get/Downloads/MySQL-5.6/MySQL-server-5.6.16-1.el6.x86_64.rpm 
 
     - name: wget mysql 2
-      common: wget http://dev.mysql.com/get/Downloads/MySQL-5.6/MySQL-client-5.6.16-1.el6.x86_64.rpm
+      command: wget http://dev.mysql.com/get/Downloads/MySQL-5.6/MySQL-client-5.6.16-1.el6.x86_64.rpm
 
     - name: wget mysql 3
       command: wget http://dev.mysql.com/get/Downloads/MySQL-5.6/MySQL-devel-5.6.16-1.el6.x86_64.rpm
-
 
     - name: wget mysql 4
       command: wget http://dev.mysql.com/get/Downloads/MySQL-5.6/MySQL-shared-5.6.16-1.el6.x86_64.rpm
 
     - name: install mysql
-      yum: name=MySQL-*.rpm
+      yum: name=MySQL-*.rpm state=present
 
     - name: install DATA-Dumper
       yum: name=perl-Data-Dumper state=latest

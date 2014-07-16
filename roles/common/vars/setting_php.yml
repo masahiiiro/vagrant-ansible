@@ -1,0 +1,11 @@
+php_realpath_cache_size: '256k'
+php_memory_limit: '512M'
+php_date_timezone: 'Asia/Tokyo'
+php_session_hash_function: '1'
+php_session_hash_bits_per_character: '6'
+php_mbstring_language: 'Japanese'
+php_mbstring_internal_encoding: 'UTF-8'
+php_mbstring_http_input: 'auto'
+php_mbstring_http_output: 'UTF-8'
+
+
