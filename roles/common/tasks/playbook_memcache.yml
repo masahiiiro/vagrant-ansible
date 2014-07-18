@@ -15,4 +15,3 @@
     - name: echo "extension=memcache.so" > /etc/php.d/memcache.ini
       command: echo "extension=memcache.so" > /etc/php.d/memcache.ini
  
-
